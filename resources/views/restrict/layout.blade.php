@@ -13,7 +13,7 @@
     <header>
         <picture>
             <a href="{{url('/mensagem')}}"> 
-                <img src="{{asset('img\logo.png')}}" alt="Logo" /> 
+                <img src="{{asset('img\logo.jpg')}}" alt="Logo" /> 
             </a>
         </picture>
         <nav>
