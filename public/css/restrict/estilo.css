@@ -68,6 +68,11 @@ main > table tr td, main > table tr th {
     padding: 1rem;
 }
 /* Formulário */
+.showImg {
+    width: 5rem;
+    height: 5rem;
+}
+
 form div {
     display: grid;
     grid-template-columns: 10rem auto;
