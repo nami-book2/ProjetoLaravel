@@ -6,7 +6,7 @@ use App\Models\Mensagem;
 use App\Models\Topico;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facade\Storage;
+use Illuminate\Support\Facades\Storage;
 
 class MensagemController extends Controller
 {
@@ -47,7 +47,6 @@ class MensagemController extends Controller
             'imagem' => 'image'
         ]);
         if ($validated) {
-            //print_r($request->get('topico));
             $mensagem = new Mensagem();
             $mensagem-> user_id = Auth::user()->id;
             $mensagem->titulo = $request->get('titulo');
@@ -56,7 +55,7 @@ class MensagemController extends Controller
             //$path = $request->file('imagem')->storeAs("public/img", $name);
             $name = $request->file('imagem')->store('','s3');
             Storage::disk('s3')->setVisibility($name,'public');
-            $path = $request->disk('s3')->url($name);
+            $path =  Storage::disk('s3')->url($name);
             $mensagem->imagem=$path;
             $mensagem->save();
             $mensagem->topicos()->attach($request->get('topico'));
