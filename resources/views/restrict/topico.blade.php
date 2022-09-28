@@ -25,7 +25,7 @@
                 <form method ="POST" action = "{{route('topico.destroy', $topico->id)}}" onsubmit="return confirm('Tem certeza?')";>
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="button">
+                    <button type="submit" class="button" color="green">
                         Remover
                     </button>
                 </form>

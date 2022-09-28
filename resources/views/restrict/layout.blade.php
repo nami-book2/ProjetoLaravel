@@ -11,24 +11,24 @@
 </head>
 
 <body>
-    <head>
+    <header>
         <picture>
-            <img src="{{asset('img/logo.png')}}" alt="Logo" />
+            <img src="{{asset('img/logo.jpg')}}" alt="Logo" />
         </picture>
         <nav>
             <ul>
                 <li>
-                    <a href="{{url('/mensagem')}}">Mensagens</a>
+                    <a href="{{url('/mensagem')}}"> Mensagens </a>
                 </li>
                 <li>
-                    <a href="{{url('/dashboard')}}">Usuários</a>
+                    <a href="{{url('/dashboard')}}"> Usuários </a>
                 </li>
                 <li>
-                    <a href="{{url('/avisos')}}">Avisos</a>
+                    <a href="{{url('/avisos')}}"> Avisos </a>
                 </li>
             </ul>
         </nav>
-    </head>
+    </header>
 
     <main>
         @yield('content')

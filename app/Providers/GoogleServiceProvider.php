@@ -38,12 +38,12 @@ class GoogleServiceProvider extends ServiceProvider
                 $client->setAccessToken($config['accessToken']);
 
                 $service = new \Google\Service\Drive($client);
-                $adapter = new \Masbug\Flysystem\GoogleDriveApater($service, $config['folder']??'/',$options);
+                $adapter = new \Masbug\Flysystem\GoogleDriveAdapter($service, $config['folder']??'/',$options);
                 $driver  = new \League\Flysystem\Filesystem($adapter);
 
                 return new \Illuminate\Filesystem\FilesystemAdapter($driver, $adapter);
             });
-        }catch(\Exeption $e){
+        }catch(\Exception $e){
             dd($e);
         }
                
